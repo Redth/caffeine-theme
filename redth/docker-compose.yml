@@ -1,0 +1,36 @@
+version: '2'
+
+services:  
+  proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro #same as before
+      - /etc/nginx/vhost.d # to update vhost configuration
+      - /usr/share/nginx/html # to write challenge files
+      - /opt/ssl:/etc/nginx/certs:ro # update this to change cert location
+  ssl-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: ssl-companion
+    volumes:
+      - /opt/ssl:/etc/nginx/certs:rw # same path as above, now RW
+    volumes_from:
+      - proxy
+    depends_on:
+      - proxy
+  ghost:
+    image: 'ghost:latest'
+    expose:
+      - '2368'
+    volumes:
+      - /opt/ghost:/var/lib/ghost/content
+    environment:
+      - url=https://redth.codes
+      - VIRTUAL_HOST=redth.codes
+      - LETSENCRYPT_HOST=redth.codes
+      - LETSENCRYPT_EMAIL=jondick@gmail.com
+    depends_on:
+      - proxy

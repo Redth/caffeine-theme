@@ -14,5 +14,6 @@ zip -r caffeeine-theme.zip . \
     -x "*node_modules*" \
     -x "*/assets/vendor*" \
     -x "*assets/vendor*" \
+    -x "*redth*" \
     -x "*package-lock.json*"
  

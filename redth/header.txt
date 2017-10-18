@@ -1,0 +1,10 @@
+<script>
+var profile_title = 'redth.codes';
+var profile_resume ='Senior Software Engineer, Microsoft';
+var disableCover = true;
+var disqus_shortname = 'redth';
+var ga_id = 'UA-6465612-17';
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/themes/prism.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/themes/prism-okaidia.min.css" rel="stylesheet" />  

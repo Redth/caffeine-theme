@@ -71,33 +71,33 @@ h6 {
 }
 
 h1 {
-    margin: $margin-h1 0;
+    margin: $margin-h1 0 $margin-bot-h1 0;
     font-size: $font-h1;
     line-height: 48px;
 }
 
 h2 {
-    margin: $margin-h2 0;
+    margin: $margin-h2 0 $margin-bot-h2 0;
     font-size: $font-h2;
 }
 
 h3 {
-    margin: $margin-h3 0;
+    margin: $margin-h3 0 $margin-bot-h3 0;
     font-size: $font-h3;
 }
 
 h4 {
-    margin: $margin-h4 0;
+    margin: $margin-h4 0 $margin-bot-h4 0;
     font-size: $font-h4;
 }
 
 h5 {
-    margin: $margin-h5 0;
+    margin: $margin-h5 0 $margin-bot-h5 0;
     font-size: $font-h5;
 }
 
 h6 {
-    margin: $margin-h6 0;
+    margin: $margin-h6 0 $margin-bot-h6 0;
     font-size: $font-h6;
 }
 
@@ -124,13 +124,16 @@ em {
 }
 
 blockquote {
+
     > p {
-        margin: 40px 48px;
+        margin: 10px 10px 10px 20px;
+        background-color: #f9f9f9;
+        padding: 5px 5px 5px 10px;
+        border-left: 10px solid #ccc;
         font-family: $quote-font;
         font-size: 18px;
         -webkit-font-smoothing: antialiased;
-        font-style: italic;
-        text-align: center;
+        text-align: left;
         word-wrap: break-word;
     }
 }
